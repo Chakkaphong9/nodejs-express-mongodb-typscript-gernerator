@@ -1,14 +1,22 @@
 {
-  "name": "generator-express-mongodb-api",
-  "version": "1.0.0",
-  "description": "this generator will help you to build your node.js mongodb api using Typscrip.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "yeoman-generator"
-  ],
-  "author": "matthew",
-  "license": "ISC"
+    "name": "generator-express-mongodb-api",
+    "version": "1.0.0",
+    "description": "this generator will help you to build your node.js mongodb api using Typscrip.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "yeoman-generator"
+    ],
+    "author": {
+        "name": "matthew",
+        "email": "chakkaphong_kh1995@hotmail.com",
+        "url": "https://github.com/Chakkaphong9/nodejs-express-mongodb-typscript-gernerator"
+    },
+    "license": "ISC",
+    "dependencies": {
+        "chalk": "^5.0.1",
+        "yosay": "^2.0.2"
+    }
 }
