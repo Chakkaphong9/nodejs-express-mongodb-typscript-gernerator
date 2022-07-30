@@ -1,4 +1,3 @@
-
 # Node.js Express API with TypeScript 4
 
 
@@ -20,8 +19,10 @@ This generator will help you to build your own Node.js Express Mongodb API using
 ##### Authentication:
 - passport local strategy
 - jwt authentication
+- OAuth2.0 Server (Authorization code grant, Refresh token grant)
 ##### Session Storage:
 - MongoDB
+- Redis
 ##### Integration testing
 - mocha
 - chai
@@ -46,7 +47,7 @@ npm install -g generator-node-express-typescript-api
 Then generate your new project:
 
 ```bash
-  yo .\generators\nodejs-express-api\index.js
+yo node-express-typescript-api
 ```
 ## App skeleton
 ```
@@ -56,60 +57,43 @@ Then generate your new project:
 ├── nodemon.json
 ├── package.json
 ├── src
-│   ├── api
-│   │   ├── config
-│   │   │   ├── connection
-|   |   |   |   |── connection.ts
-│   │   │   ├── cron
-|   |   |   |   |── cron.ts
-│   │   │   ├── env
-|   |   |   |   |── defaults.ts
-|   |   |   |   |── development.ts
-|   |   |   |   |── index.ts
-|   |   |   |   |── production.ts
-│   │   │   └── error
-|   |   |   |   |── index.ts
-|   |   |   |   |── senHttpError.ts
-│   │   │   └── middleware
-|   |   |   |   |── middleware.ts
-|   |   |   |   |── passport.ts
-│   │   │   └── router
-|   |   |   |   |── AuthRouter.ts
-|   |   |   |   |── routes.ts
-|   |   |   |   |── UserRouter.ts
-│   │   │   └── server
-|   |   |   |   |── index.ts
-|   |   |   |   |── server.ts
-|   |   |   |   |── serverHandlers.ts
-│   │   ├── controllers
-│   │   │   ├── AuthController.ts
-│   │   │   ├── UserController.ts
-│   │   ├── helper
-│   │   │   ├── laguage.ts
-│   │   ├── interfaces
-│   │   │   ├── IAuthService.ts
-│   │   │   ├── IUserService.ts
-│   │   │   ├── ServerInterface.ts
-│   │   ├── models
-│   │   │   ├── UserModel.ts
-│   │   ├── services
-│   │   │   ├── AuthService
-|   |   |   |   ├── AuthService.th
-|   |   |   |   ├── AuthValidation.th
-│   │   │   ├── UserService
-|   |   |   |   ├── UserService.th
-|   |   |   |   ├── UserValidation.th
-│   ├── client
-│   │   └── index.ejs
-├── test
-│   ├── fixtures
-│   │   └── user.json
-│   ├── api.js
-│   ├── authentication.js
-│   ├── index.js
-├── swagger.json
+│   ├── components
+│   │   ├── Auth
+│   │   │   ├── index.ts
+│   │   │   ├── interface.ts
+│   │   │   ├── service.ts
+│   │   │   └── validation.ts
+│   │   ├── User
+│   │   │   ├── index.ts
+│   │   │   ├── interface.ts
+│   │   │   ├── model.ts
+│   │   │   ├── service.ts
+│   │   │   └── validation.ts
+│   │   ├── index.ts
+│   │   └── validation.ts
+│   ├── config
+│   │   ├── connection
+│   │   │   └── connection.ts
+│   │   ├── env
+│   │   │   └── index.ts
+│   │   ├── error
+│   │   │   ├── index.ts
+│   │   │   └── sendHttpError.ts
+│   │   ├── middleware
+│   │   │   ├── middleware.ts
+│   │   │   └── passport.ts
+│   │   └── server
+│   │       ├── ServerInterface.ts
+│   │       ├── index.ts
+│   │       ├── server.ts
+│   │       └── serverHandlers.ts
+│   └── routes
+│       ├── AuthRouter.ts
+│       ├── UserRouter.ts
+│       └── index.ts
 ├── swaggerDef.js
 ├── tsconfig.json
+└── .eslintrc.json
 ```
 ## Running the API
 ### Development
@@ -143,7 +127,7 @@ Express server listening on http://localhost:3000/, in development mode
 The developer mode will watch your changes then will transpile the TypeScript code and re-run the node application automatically.
 
 ### Testing
-To run integration tests: 
+To run integration tests:
 ```bash
 npm test
 ```
@@ -155,12 +139,7 @@ If you want to add some new variables, you also need to add them to interface an
 ## Usage as OAuth2.0 Server
 To use this generator as OAuth2.0 server you should implement client side, that will be handle your redirectUris and make requests to `/auth/token/` route. [Read more about OAuth2.0](https://alexbilbie.com/guide-to-oauth-2-grants/)
 
-## Swagger
-```bash
-npm install -g swagger-jsdoc
-swagger-jsdoc -d swaggerDef.js ./src/**/*.ts -o swagger.json
-```
-Swagger documentation will be available on route: 
+Swagger documentation will be available on route:
 ```bash
 http://localhost:3000/docs
 ```
