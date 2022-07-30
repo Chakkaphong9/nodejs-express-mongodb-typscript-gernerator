@@ -2,10 +2,10 @@
 # Node.js Express API with TypeScript 4
 
 
-![CircleCI branch](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser/master.svg?style=flat-square)
-![npm](https://img.shields.io/npm/dm/localeval.svg?style=flat-square)
-![Plugin on redmine.org](https://img.shields.io/redmine/plugin/stars/redmine_xlsx_format_issue_exporter.svg?style=flat-square)
-![onix](https://img.shields.io/badge/onix-systems-blue.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
 > Node.js Express API with TypeScript 4. Supports MongoDB
 
@@ -154,24 +154,3 @@ If you want to add some new variables, you also need to add them to interface an
 
 ## Usage as OAuth2.0 Server
 To use this generator as OAuth2.0 server you should implement client side, that will be handle your redirectUris and make requests to `/auth/token/` route. [Read more about OAuth2.0](https://alexbilbie.com/guide-to-oauth-2-grants/)
-
-## Swagger
-```bash
-npm install -g swagger-jsdoc
-swagger-jsdoc -d swaggerDef.js ./src/**/*.ts -o swagger.json
-```
-Swagger documentation will be available on route: 
-```bash
-http://localhost:3000/docs
-```
-![Alt Text](https://i.ibb.co/b6SdyQV/gif1.gif)
-
-## Getting To Know Yeoman
-
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
-
-[travis-image]: https://travis-ci.org/caiobsouza/generator-ts-node-api.svg?branch=master
-[travis-url]: https://travis-ci.org/caiobsouza/generator-ts-node-api
