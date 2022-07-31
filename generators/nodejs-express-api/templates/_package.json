@@ -2,7 +2,17 @@
     "name": "typescript-express-rest-api",
     "version": "1.0.0",
     "main": "./build/index.js",
-    "keywords": ["yeoman-generator", "typescript", "node", "nodejs", "rest", "restfull", "api", "builder", "generator"],
+    "keywords": [
+        "yeoman-generator",
+        "typescript",
+        "node",
+        "nodejs",
+        "rest",
+        "restfull",
+        "api",
+        "builder",
+        "generator"
+    ],
     "description": "this generator will help you to build node.js express using typescript.",
     "author": "matthew <chakkaphong_kh1995@hotmail.com>",
     "license": "MIT",
@@ -15,6 +25,7 @@
     },
     "fiels": ["src"],
     "dependencies": {
+        "bcrypt": "^5.0.1",
         "bcrypt-nodejs": "^0.0.3",
         "body-parser": "1.18.2",
         "chalk": "2.4.1",
