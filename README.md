@@ -40,13 +40,12 @@ First, install [Yeoman](http://yeoman.io) and generator-node-express-typescript-
 
 ```bash
 npm install -g yo
-npm install -g generator-node-express-typescript-api
 ```
 
 Then generate your new project:
 
 ```bash
-  yo .\generators\nodejs-express-api\index.js
+yo .\generators\nodejs-express-api\index.js
 ```
 ## App skeleton
 ```
